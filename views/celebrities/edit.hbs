@@ -1,0 +1,32 @@
+<h2>Edit Celebrity</h2>
+
+{{#if celebrity}}
+	<form method='post' action='/celebrities/save/{{celebrity.id}}'>
+		<div class='form-group'>
+			<label for='name'>Name</label>
+			<input name='name' value='{{celebrity.name}}' type='text' class='form-control' id='name' />
+		</div>
+		<div class='form-group'>
+			<label for='occupation'>Occupation</label>
+			<input
+				name='occupation'
+				value='{{celebrity.occupation}}'
+				type='text'
+				class='form-control'
+				id='occupation'
+			/>
+		</div>
+		<div class='form-group'>
+			<label for='catchPhrase'>Catch phrase</label>
+			<input
+				name='catchPhrase'
+				value='{{celebrity.catchPhrase}}'
+				type='text'
+				class='form-control'
+				id='catchPhrase'
+			/>
+		</div>
+		<a href='/celebrities' class='btn btn-secondary'>Back</a>
+		<button type='submit' class='btn btn-primary'>Save</button>
+	</form>
+{{/if}}

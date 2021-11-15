@@ -1,0 +1,37 @@
+<h2>List of movies</h2>
+
+<br />
+<a href='/movies/new' class='btn btn-primary'>Add a movie</a>
+<br />
+<br />
+<table class='table'>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Genre</th>
+			<th>Plot</th>
+			<th>Cast</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each movies}}
+			<tr>
+				<td>{{this.title}}</td>
+				<td>{{this.genre}}</td>
+				<td>{{this.plot}}</td>
+				<td>
+					<ul>
+						{{#each this.cast}}
+							<li>{{this.name}}</li>
+						{{/each}}
+					</ul>
+				</td>
+				<td align='right'>
+					<a href='/movies/edit/{{this.id}}'><i class='bi bi-pencil'></i></a>
+					<a href='/movies/delete/{{this.id}}'><i class='bi bi-trash'></i></a>
+				</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>

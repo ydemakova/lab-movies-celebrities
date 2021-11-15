@@ -1,0 +1,29 @@
+<h2>List of celebrities</h2>
+
+<br />
+<a href='/celebrities/new' class='btn btn-primary'>Add a celebrity</a>
+<br />
+<br />
+<table class='table'>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Occupation</th>
+			<th>Catch Phrase</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each celebrities}}
+			<tr>
+				<td>{{this.name}}</td>
+				<td>{{this.occupation}}</td>
+				<td>{{this.catchPhrase}}</td>
+				<td align='right'>
+					<a href='/celebrities/edit/{{this.id}}'><i class='bi bi-pencil'></i></a>
+					<a href='/celebrities/delete/{{this.id}}'><i class='bi bi-trash'></i></a>
+				</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
